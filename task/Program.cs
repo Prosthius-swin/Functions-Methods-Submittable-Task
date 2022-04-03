@@ -17,6 +17,8 @@ namespace task
             //swapTwoInt();
             //raiseIntegerToAnother();
             //fibonacciSequence();
+            //primeNumber();
+            individualDigitsSum();
 
 
             //1
@@ -137,12 +139,13 @@ namespace task
                     Console.Write(fib + " ");
                 } Console.WriteLine();
                 return sequence.ToString();
-            }*/
+            }
 
             //9
-            //static string primeNumber() {
+            static string primeNumber() {
                 int number;
                 int check = 0;
+                string result;
 
                 Console.Write("Input a number: ");
                 number = int.Parse(Console.ReadLine());
@@ -152,14 +155,40 @@ namespace task
                     check++;
                 }
             } 
-            
             if (check == 2) {
             Console.WriteLine("{0} is a Prime Number", number);
+            result = Console.ReadLine();
             } else {
-                Console.WriteLine("Not a Prime Number");
+                Console.WriteLine("{0} is not a prime number", number);
+                result = Console.ReadLine();
             }
-            Console.ReadLine();
-            //}
+            Console.WriteLine();
+            return result;
+            }*/
+
+            //10
+            static string individualDigitsSum() 
+            {
+                int num;
+                int sum = 0;
+                int remainder;
+                string answer;
+
+                Console.Write("Enter a number: ");
+                num = int.Parse(Console.ReadLine());
+           
+                while (num > 0) 
+                {
+                    remainder = num % 10;
+                    Console.WriteLine(remainder);
+                    sum = sum + remainder;
+                    num = num / 10;
+                }
+            
+                Console.WriteLine("The Sum of Digits is: {0}", sum);
+                answer = Console.ReadLine();
+                return answer;
+            }
         }
     }
 }
