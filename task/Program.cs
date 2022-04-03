@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace task
@@ -13,20 +14,26 @@ namespace task
             //AddTwoNums(10, 3);
             //NumOfSpaces("This is a string");
             //arraySum();
-            swapTwoInt();
+            //swapTwoInt();
+            //raiseIntegerToAnother();
+            //fibonacciSequence();
 
+
+            //1
             /*static string sayHello() {
                 string hello = "Welcome friends! \nHave a nice day!";
                 Console.WriteLine(hello);
                 return hello;
             }
 
+            //2
             static string Welcome(string name = "") {
                 string welcome = "Welcome friend " + name + "!" + "\nHave a nice day!";
                 Console.WriteLine(welcome);
                 return welcome;
             }
 
+            //3
             static string AddTwoNums(int n1, int n2) {
                 int n3 = n1 + n2;
                 Console.WriteLine("The sum of two numbers is: " + n3);
@@ -34,6 +41,7 @@ namespace task
                 return answer;
             }
 
+            //4
             static string NumOfSpaces(string input = "") {
                 int spaces = 0;
                 for (int i = 0; i < input.Length; i++) {
@@ -44,9 +52,10 @@ namespace task
                     Console.WriteLine(test + " contains " + spaces + " spaces.");
                     string spacesCount = Console.ReadLine();
                     return spacesCount;
-            }*/
+            }
 
-            /*static string arraySum() {
+            //5
+            static string arraySum() {
                 int[] arr = new int[5];
                 Console.WriteLine("Input 5 elements in the array.");
                 for(int i = 0; i < 5; i++) {
@@ -59,6 +68,7 @@ namespace task
                 return sumString;
             }
 
+            //6
             static string swapTwoInt() {
                 int i = 0;
                 int[] arr = new int[2];
@@ -77,24 +87,79 @@ namespace task
                 string swap = Console.ReadLine();
 
                 return swap;
-                }*/
+                }
 
+            //7
             static string raiseIntegerToAnother() {
-                int i = 0;
-                int[] arr = new int[2];
+                int baseNum;
+                int expon;
+                double raised;
+                string answer;
+                
+                Console.WriteLine("Enter the base number");
+                baseNum = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Input Base number: ",i);
-                arr[i] = Int32.Parse(Console.ReadLine());
-                i++;
+                Console.WriteLine("Enter the exponent");
+                expon = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Input the Exponent: ",i);
-                arr[i] = Int32.Parse(Console.ReadLine());
+                raised = Math.Pow(baseNum, expon);
 
-                int raised = Math.Pow(arr[0], arr[1]);
+                Console.WriteLine("The number " + baseNum + " ^ (to the power of) " + expon + " = " + raised);
+                answer = Console.ReadLine();
+                return answer;
+            }
 
+            //8
+            static string fibonacciSequence() {
+                int counter;
+                int first = 0;
+                int second = 1;
+                int result;
+                List<int> sequence = new List<int>();
+
+                Console.Write("Input number of fibonacci series : ");
+                counter = int.Parse(Console.ReadLine());
+
+                if (counter >= 1) {
+                    sequence.Add(0);
+                } if (counter >=2) {
+                    sequence.Add(1);
+                }
+                
+                for (int i = 2; i < counter; i++) {
+                    result = first + second;
+                    first = second;
+                    second = result;
+                    sequence.Add(result);
+                }
                 Console.WriteLine();
+                foreach(int fib in sequence) {
+                    Console.Write(fib + " ");
+                } Console.WriteLine();
+                return sequence.ToString();
+            }*/
+
+            //9
+            //static string primeNumber() {
+                int number;
+                int check = 0;
+
+                Console.Write("Input a number: ");
+                number = int.Parse(Console.ReadLine());
+
+                for (int i = 1; i <= number; i++) {
+                    if (number % i == 0) {
+                    check++;
+                }
+            } 
+            
+            if (check == 2) {
+            Console.WriteLine("{0} is a Prime Number", number);
+            } else {
+                Console.WriteLine("Not a Prime Number");
             }
-            }
+            Console.ReadLine();
+            //}
         }
     }
-//}
+}

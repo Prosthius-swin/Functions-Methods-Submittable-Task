@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = task
-build_property.ProjectDir = C:\Users\103919468\OneDrive - Swinburne University\430\functions-and-methods\task\
+build_property.ProjectDir = /home/callum/repos/Functions-Methods-Submittable-Task/task/
